@@ -57,6 +57,17 @@ document.getElementById('toggleThemeBtn').addEventListener('click', function () 
     box.style.borderColor = isDarkTheme ? '#ffffff' : '#212529';
   });
 
+  // Trocar cor de fundo e texto dos cards
+  document.querySelectorAll('.theme-card').forEach(function (card) {
+    if (isDarkTheme) {
+      card.classList.add('bg-dark', 'text-light');
+      card.classList.remove('bg-light', 'text-dark');
+    } else {
+      card.classList.add('bg-light', 'text-dark');
+      card.classList.remove('bg-dark', 'text-light');
+    }
+  });
+
   // Trocar tema do botão "Conferir Mais"
   document.querySelectorAll('.theme-outline-button').forEach(function (btn) {
     if (btn.classList.contains('btn-outline-dark')) {
